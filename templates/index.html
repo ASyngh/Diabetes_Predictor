@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Diabetes Risk Checker</h2>
+
+    <form action="/predict" method="post">
+        {% for i in range(8) %}
+            <div class="input-group">
+                <label for="f{{i}}">{{ features[i][0] }} ({{ features[i][1] }}):</label><br>
+                <input type="text" id="f{{i}}" name="f{{i}}" placeholder="Enter {{ features[i][0] }}" required><br>
+            </div>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <div class="result {{ 'positive' if 'Positive' in prediction_text else 'negative' }}">
+            <h3>{{ prediction_text }}</h3>
+        </div>
+    {% endif %}
+</body>
+</html>
