@@ -17,3 +17,7 @@ A machine learning web app that predicts the likelihood of diabetes based on use
 ## Dataset
 Used [Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database).
 
+## Notebooks
+
+- `01_Diabetes_Model_Training.ipynb` – Model training and evaluation in Google Colab.
+
